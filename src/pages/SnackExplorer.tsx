@@ -4,12 +4,11 @@ import { Link } from 'react-router-dom';
 import { snacks } from '../data/snacks';
 import type { Snack } from '../data/snacks';
 import { FaStar, FaFilter } from 'react-icons/fa';
-import type { IconType } from 'react-icons';
 import { useCart } from '../context/CartContext';
 
 const SnackExplorer: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [selectedFlavor, setSelectedFlavor] = useState<string>('all');
+  const [selectedFlavor] = useState<string>('all');
   const [showPopular, setShowPopular] = useState<boolean>(false);
   const [hoveredSnack, setHoveredSnack] = useState<string | null>(null);
   const { addToCart } = useCart();
@@ -22,9 +21,6 @@ const SnackExplorer: React.FC = () => {
     { id: 'healthy', name: 'Healthy', emoji: '🥗' }
   ];
 
-  const flavors = [
-    'all', 'Spicy', 'Sweet', 'Sour', 'Salty', 'Fruity', 'Chocolate'
-  ];
 
   const filteredSnacks = snacks.filter(snack => {
     const categoryMatch = selectedCategory === 'all' || snack.category === selectedCategory;

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { getSnackById } from '../data/snacks';
-import type { Snack } from '../data/snacks';
 import { useCart } from '../context/CartContext';
 import { FaStar, FaShoppingCart, FaHeart, FaShare } from 'react-icons/fa';
 
